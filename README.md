@@ -142,6 +142,8 @@ The first parameter contains the route
 The second parameter contains all middlewares that will run before we reach the controller. In this case we are going to validate the parameters we'll be receiving.
 The third parameter contains the logic that will be run from the controller.
 
+The complete route will be a POST on /api/v1/users
+
 ### Controller
 
 The controller's only function is to call the services that will run to create our model.
