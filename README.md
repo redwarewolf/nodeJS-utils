@@ -20,6 +20,8 @@ exports.init = app => {
 The first parameter contains the route
 The second parameter contains the logic that will be run from the controller.
 
+The complete route will be a GET on /api/v1/users
+
 ### Controller
 
 The controller's only function is to call the services that will run to list our model.
