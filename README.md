@@ -1,5 +1,47 @@
 # nodeJS-utils
 
+## Usage
+
+By doing a simple POST to {API_URL}/api/v1/users (or the model that you defined) with the params as follows:
+
+``` js
+{
+  address:"1279 Ohri Loop"
+  birthDate:"2072-10-19T17:21:03.947Z"
+  city:"Miozun"
+  country:"PS"
+  email:"kowi@wolox.com.ar"
+  emailSubscription:true
+  id:1
+  name:"Helen"
+  numberOfLanguages:8
+  password:"somePassword"
+  state:"NM"
+  type:"regular"
+}
+```
+You'll receive as a response the following:
+
+```js
+{
+  address:"1279 Ohri Loop"
+  birthDate:"2072-10-19T17:21:03.947Z"
+  city:"Miozun"
+  country:"PS"
+  createdAt:"2020-06-29T13:15:51.533Z"
+  email:"kowi@wolox.com.ar"
+  emailSubscription:true
+  id:1
+  name:"Helen"
+  numberOfLanguages:8
+  password:"$2b$10$1XP1EjS35e7wr29Mz1Bx0.tPF9Me6L30.5MQcgEp5NrzcCxwLETfe"
+  state:"NM"
+  type:"regular"
+  updatedAt:"2020-06-29T13:15:51.533Z"
+}
+```
+With status code: 201 (created)
+
 ## Model Creation Endpoint
 
 We'll be using a User model  as an example to show the code's functionality.
@@ -257,10 +299,48 @@ numberOfLanguages: {
 
 ## Responses
 
+If we use the following params: 
+
+``` js
+{
+  address:"1279 Ohri Loop"
+  birthDate:"2072-10-19T17:21:03.947Z"
+  city:"Miozun"
+  country:"PS"
+  email:"kowi@wolox.com.ar"
+  emailSubscription:true
+  id:1
+  name:"Helen"
+  numberOfLanguages:8
+  password:"somePassword"
+  state:"NM"
+  type:"regular"
+}
+```
+
 When we have a successful scenario, we'll receive:
 
 HTTP Status Code: 201 (created)
-Body: Containing the information of the created model
+Body: 
+
+```js
+{
+  address:"1279 Ohri Loop"
+  birthDate:"2072-10-19T17:21:03.947Z"
+  city:"Miozun"
+  country:"PS"
+  createdAt:"2020-06-29T13:15:51.533Z"
+  email:"kowi@wolox.com.ar"
+  emailSubscription:true
+  id:1
+  name:"Helen"
+  numberOfLanguages:8
+  password:"$2b$10$1XP1EjS35e7wr29Mz1Bx0.tPF9Me6L30.5MQcgEp5NrzcCxwLETfe"
+  state:"NM"
+  type:"regular"
+  updatedAt:"2020-06-29T13:15:51.533Z"
+}
+```
 
 If anything should go wrong, we'll receive an error code indicating the situation along with the message indicating the error. For example:
 
